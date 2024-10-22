@@ -5,8 +5,8 @@ This repository contains a modified version of the [Overleaf HFU Thesis Template
 ## Table of Contents
 - [Installation](#installation)
 - [Necessary Packages](#necessary-packages)
+- [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
-- [License](#license)
 
 ## Installation
 
@@ -18,7 +18,15 @@ To set up LaTeX in your local environment, follow the guide provided by [Jake Le
 
 ## Necessary Packages
 
-The following LaTeX packages are essential for the template to function correctly. You can install them using the TeX Live Shell:
+The following LaTeX packages are essential for the template to function correctly.  
+To install them, run this command in the `cmd`:
+
+```cmd
+for /F "tokens=*" %i in (installed_packages.txt) do tlmgr install %i
+```
+
+<details>
+<summary>Click to expand the list of necessary packages</summary>
 
 - `acmart`
 - `acronym`
@@ -34,8 +42,6 @@ The following LaTeX packages are essential for the template to function correctl
 - `babel-english`
 - `babelbib`
 - `bera`
-- `biber`
-- `biber.windows`
 - `biblatex`
 - `biblatex-ieee`
 - `bibtex`
@@ -207,6 +213,8 @@ The following LaTeX packages are essential for the template to function correctl
 - `xstring`
 - `zapfding`
 
+</details>
+
 ## Usage
 
 Once you have installed the necessary packages and set up your LaTeX environment, you can start creating your document using the provided template. Simply clone this repository to your local machine, open it in Visual Studio Code, and begin editing.
@@ -218,3 +226,4 @@ If you encounter any issues during the installation or usage of LaTeX, please re
 - [TeX Live Documentation](https://www.tug.org/texlive/doc.html)
 - [Overleaf Documentation](https://www.overleaf.com/learn)
 - [Visual Studio Code LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+
