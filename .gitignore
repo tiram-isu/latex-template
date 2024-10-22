@@ -16,3 +16,6 @@
 *.lof
 *.lol
 *.lot
+*.idx
+*.ilg
+*.ind
