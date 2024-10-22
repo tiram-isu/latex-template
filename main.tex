@@ -4,7 +4,7 @@
 	bibliography=totoc,
 	cleardoublepage=empty, 
 	index=totoc,
-	ngerman,
+	english,
 	listof=nochaptergap,
 	]{scrbook}
 \usepackage{cmap}
@@ -17,7 +17,7 @@
 
 \setcounter{secnumdepth}{3}
 
-% Titelblatt
+% Title page
 \include{content/framework/title}
 \cleardoubleemptypage
 
@@ -28,31 +28,27 @@
 \include{content/framework/abstract}
 \cleardoubleemptypage
 
-% Inhaltsverzeichnis
+% Table of Contents
 \phantomsection
-\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
 \cleardoubleemptypage
 
-% Abbildungsverzeichnis einbinden und ins Inhaltsverzeichnis
-% WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
-% korrekt\phantomsection
+% List of Figures and add to Table of Contents
 \phantomsection 
 \addcontentsline{toc}{chapter}{\listfigurename} 
 \listoffigures
 \cleardoubleemptypage
 
-% Tabellenverzeichnis einbinden und ins Inhaltsverzeichnis
-% WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
-% korrekt\phantomsection
+% List of Tables and add to Table of Contents
 \phantomsection
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 \cleardoubleemptypage
 
-% Quellcodeverzeichnis einbinden und ins Inhaltsverzeichnis
+% Source Code Directory and add to Table of Contents
 \phantomsection
-\addcontentsline{toc}{chapter}{Quellcodeverzeichnis}
+\addcontentsline{toc}{chapter}{Source Code Directory}
 
 %Define listing
 \makeatletter
@@ -66,11 +62,9 @@
 \renewcommand{\cftlistingsafterpnum}{\vskip0pt} %Spacing between entries
 \renewcommand*{\cftlistingspresnum}{\lstlistingname~}
 \settowidth{\cftlistingsnumwidth}{\cftlistingspresnum}
-\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
-% Tabellenverzeichnis anpassen
-\renewcommand{\lstlistingname}{Codeauschnitt}
+\renewcommand{\lstlistlistingname}{Source Code Listing}
+\renewcommand{\lstlistingname}{Code Snippet}
 \renewcommand{\cftlistingsaftersnum}{:}
-% Breite des Nummerierungsbereiches [Codeauschnitt 1:]
 \newlength{\codeLength}
 \settowidth{\codeLength}{\bfseries\lstlistingname\cftlistingsaftersnum}
 \addtolength{\codeLength}{5mm}
@@ -78,7 +72,7 @@
 \lstlistoflistings
 \cleardoubleemptypage
 
-% Abkürzungsverzeichnis
+% Abbreivations
 \include{content/framework/abbreviations}
 
 \mainmatter
@@ -89,26 +83,26 @@
 \include{content/chapters/8_prospect} 
 \include{content/chapters/9_conclusion}
 
-% Schalgwortverzeichnis (Index)
+% Index
 \printindex
 
-% Literaturverzeichnis
+% Bibliography 
 \singlespacing
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{bibtex}
 
-% Eidesstattliche Erklärung
+% Affidavit
 \include{content/framework/affirmation}
 
-%Zurücksetzen \chaptermark
+%Reset \chaptermark
 \let\chaptermark\oldchaptermark
 
-% Hier können Anhaenge angefuegt werden
+% Here the appendix starts
 \begin{appendices}
-\chapter{Monatsberichte}
-Nun folgen die Monatsberichte
+\chapter{Monthly Reports}
+Now follow the monthly reports.
 \newpage
-\appendixsection{Monatsbericht Februar}{content/attachments/report.pdf}
-\appendixsection{Monatsbericht Januar}{content/attachments/report.pdf}
+\appendixsection{Monthly Report February}{content/attachments/report.pdf}
+\appendixsection{Monthly Report January}{content/attachments/report.pdf}
 \end{appendices}
 \end{document}      
